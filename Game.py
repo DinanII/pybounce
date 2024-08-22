@@ -6,24 +6,26 @@ class Game:
 
     def __init__(self, wTitle='BounceGame'):
 
-        # Window setup
+        # Window initialization
         self.tk = Tk()
         self.tk.title(wTitle) 
         #self.tk.resizable(0,0)  # Window is not resizable (vertically and horizontally)
-        w = self.tk.winfo_screenwidth()
-        h = self.tk.winfo_screenheight()
+        self.tk.wm_attributes('-topmost',1)
+        w = self.tk.winfo_screenwidth() * 0.10
+        h = self.tk.winfo_screenheight() * 0.30
         self.tk.geometry("%dx%d+0+0" % (w, h))
     
         # Canvas drawing
         self.canvas = Canvas(self.tk, width=w, height=h, bd=0, highlightthickness=0)
         self.canvas.pack()
         
+        # Windows and Gameloop n
+        self.tk.update()  # Initialize Tkinter for animation
+
         # Game components initialization
         self.paddle = Paddle(self.canvas, 'blue')
         self.ball = Ball(self.canvas, 'red', self.paddle)
-        
-        # Windows and Gameloop initialization
-        self.tk.update()  # Initialize Tkinter for animation
+
         self.gameLoop()
     
     def gameLoop(self):
