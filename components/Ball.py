@@ -1,7 +1,7 @@
 from random import randrange
 
 class Ball:
-    def __init__(self, canvas, color,paddle):
+    def __init__(self, canvas, color, paddle):
         self.canvas = canvas
         self.paddle = paddle
         self.id = canvas.create_oval(10,10,25,25,fill=color)
