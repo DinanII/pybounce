@@ -24,4 +24,5 @@ while isRunning:
             print("Invalid option")
             Helper.waitForUser()
 #https://realpython.com/python-gui-tkinter/
-#pyinstaller --onefile --add-binary /usr/lib/x86_64-linux-gnu/libpython3.12.so.1.0:. main.py
+#   python3 pyinstaller --onefile --add-binary /usr/lib/x86_64-linux-gnu/libpython3.12.so.1.0:. main.py
+#   wine python -m PyInstaller --onefile --add-binary /usr/lib/x86_64-linux-gnu/libpython3.12.so.1.0:. main.py
