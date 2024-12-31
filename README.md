@@ -13,7 +13,7 @@ This will initiate a new virtual enviroment locally. Please use the interpeter i
 python3 -m venv .env
 
 **Windows**
-python -m venv .env
+python1.1 -m venv .env
 
 2. Activate virtual enviroment
 
