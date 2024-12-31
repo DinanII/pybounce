@@ -17,7 +17,7 @@ class Paddle:
         pos = self.canvas.coords(self.id)  # x1, y1, x2, y2
 
         # Debugging prints
-        print(f"Paddle position: {pos}, Velocity: {self.x}")
+        #print(f"Paddle position: {pos}, Velocity: {self.x}")
 
         if pos[0] <= 0:  # Left edge, x1
             self.x = 0

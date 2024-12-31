@@ -1,14 +1,15 @@
 from tkinter import *
 import time
 from components import Ball, Paddle
-
+from Helper import Helper
 class Game:
 
     def __init__(self, wTitle='BounceGame'):
 
         # Window initialization
         self.tk = Tk()
-        self.tk.title(wTitle) 
+        self.tk.title(wTitle)
+        self.isRunning = False; 
         #self.tk.resizable(0,0)  # Window is not resizable (vertically and horizontally)
         self.tk.wm_attributes('-topmost',1)
         w = self.tk.winfo_screenwidth() * 0.10
@@ -29,14 +30,27 @@ class Game:
         self.gameLoop()
     
     def gameLoop(self):
-        while True:
+        self.isGameRunning = True
+        while self.isGameRunning:
             if not self.ball.hitBottom:
                 self.ball.draw()
                 self.paddle.draw()
             self.tk.update_idletasks()
             self.tk.update()
             time.sleep(0.01)
+            
+            if self.ball.hitBottom:
+                self.isGameRunning = False
+                self.endGame()
 
+    def endGame(self):
+        self.tk.destroy()
+        Helper.clearConsole()
+        print("========================================================",end="\n\n")
+        print("Game over!",end="\n\n")
+        print("========================================================",end="\n\n")
+        print(f"You've hit the ball {self.ball.paddleHits} time(s)")
+        Helper.waitForUser()
 # Ideas for update
 # Highscores
 # Only move the pan-thing for a bit when the player presses the arrow key
