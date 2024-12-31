@@ -21,11 +21,11 @@ class Paddle:
 
         if pos[0] <= 0:  # Left edge, x1
             self.x = 0
-            print('Paddle reached left edge')
+            #print('Paddle reached left edge')
 
         if pos[2] >= self.canvas_width:  # Right edge, x2
             self.x = 0
-            print('Paddle reached right edge')
+            #print('Paddle reached right edge')
 
     def turnLeft(self, evt):
         self.x = -2

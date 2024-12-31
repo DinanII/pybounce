@@ -1,6 +1,7 @@
 from Game import Game
 from Helper import Helper
 import time
+import sys
 isRunning = True
 
 while isRunning:
@@ -13,7 +14,7 @@ while isRunning:
     choice = Helper.askForString("Make a choice")
     match choice:
         case "0":
-            exit()
+            sys.exit(0)
         case "1":
             print("Game will launce in a moment")
             time.sleep(1.5)
@@ -23,3 +24,4 @@ while isRunning:
             print("Invalid option")
             Helper.waitForUser()
 #https://realpython.com/python-gui-tkinter/
+#pyinstaller --onefile --add-binary /usr/lib/x86_64-linux-gnu/libpython3.12.so.1.0:. main.py
