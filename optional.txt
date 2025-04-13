@@ -1,5 +1,0 @@
-3. Install packages
-  pip install -r requirements.txt. This will install all packages listed in {project_root}/requirements.txt.
-  If a new dependency is installed, run pip freeze > requirements.txt so every package (including new ones) is registered, so others can also easily install. There are no packages installed currently, so this step is not necessary.
-
-1. Please use the interpreter included in the virtual environment (.env/bin/python).
